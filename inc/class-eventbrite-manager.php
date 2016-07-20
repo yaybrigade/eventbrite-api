@@ -368,6 +368,7 @@ class Eventbrite_Manager {
 		$event['category']      = ( isset( $api_event->category ) )          ? $api_event->category          : '';
 		$event['subcategory']   = ( isset( $api_event->subcategory ) )       ? $api_event->subcategory       : '';
 		$event['format']        = ( isset( $api_event->format ) )            ? $api_event->format            : '';
+		$event['event_status']  = ( isset( $api_event->status ) )            ? $api_event->status            : '';
 
 		return (object) $event;
 	}
