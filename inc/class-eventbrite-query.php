@@ -299,8 +299,7 @@ class Eventbrite_Query extends WP_Query {
 			$this->api_results->events = array_slice( $this->api_results->events, 0, absint( $this->query_vars['limit'] ) );
 		}
 
-	 	// * ADDED by ROMAN
-		// Filter by event status: 'event_status'
+		// Filter by event status: 'event_status' (canceled | live | started | ended | completed)
 		if ( isset( $this->query_vars['event_status'] ) ) {
 			$this->api_results->events = array_filter( $this->api_results->events, array( $this, 'filter_by_event_status' ) );
 		}
@@ -381,7 +380,6 @@ class Eventbrite_Query extends WP_Query {
 	}
 
 	/**
-	 * ADDED by ROMAN
 	 * Determine if an event is part of a given event status.
 	 *
 	 * @access protected
