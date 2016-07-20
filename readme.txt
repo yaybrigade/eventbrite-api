@@ -3,7 +3,7 @@ Contributors: jkudish, kwight
 Tags: eventbrite, events, api, WordPress.com
 Requires at least: 3.8
 Tested up to: 4.5
-Stable tag: 1.0.11
+Stable tag: 1.0.11a
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,6 +85,11 @@ All development for Eventbrite API plugin is done through the [GitHub repo](http
 This plugin was developed by [Automattic](http://automattic.com/), in direct partnership with [Eventbrite](http://eventbrite.com). The Eventbrite name and logo are used by permission.
 
 == Changelog ==
+
+= 1.0.11a - July 20, 2016 =
+*  Expose the value 'status' as 'event-status' in the object
+*  Add ability to filter by event-status (canceled | live | started | ended | completed)
+*  Fork of Automattic plugin by yaybrigade
 
 = 1.0.11 - May 30, 2016 =
 * Support the `status` parameter in Eventbrite_Query when displaying private events.

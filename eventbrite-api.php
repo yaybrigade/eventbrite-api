@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: Eventbrite API
-Plugin URI: https://github.com/Automattic/eventbrite-api
+Plugin URI: https://github.com/yaybrigade/eventbrite-api
 Description: A WordPress plugin that integrates the Eventbrite API with WordPress and Keyring.
-Version: 1.0.11
-Author: Automattic
-Author URI: http://automattic.com
+Version: 1.0.11a
+Author: Automattic, forked by Yay Brigade
+Author URI: http://yaybrigade.com
 License: GPL v2 or newer <https://www.gnu.org/licenses/gpl.txt>
 */
 
