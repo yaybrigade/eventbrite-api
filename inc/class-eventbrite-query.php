@@ -298,6 +298,13 @@ class Eventbrite_Query extends WP_Query {
 		if ( isset( $this->query_vars['limit'] ) && is_integer( $this->query_vars['limit'] ) ) {
 			$this->api_results->events = array_slice( $this->api_results->events, 0, absint( $this->query_vars['limit'] ) );
 		}
+
+	 	// * ADDED by ROMAN
+		// Filter by event status: 'event_status'
+		if ( isset( $this->query_vars['event_status'] ) ) {
+			$this->api_results->events = array_filter( $this->api_results->events, array( $this, 'filter_by_event_status' ) );
+		}
+
 	}
 
 	/**
@@ -372,6 +379,21 @@ class Eventbrite_Query extends WP_Query {
 	protected function filter_by_format( $event ) {
 		return ( isset( $event->format->id ) ) ? $event->format->id == $this->query_vars['format_id'] : false;
 	}
+
+	/**
+	 * ADDED by ROMAN
+	 * Determine if an event is part of a given event status.
+	 *
+	 * @access protected
+	 *
+	 * @param  object $event A single event from the API call results.
+	 * @return bool True if properties match, false otherwise.
+	 */
+	protected function filter_by_event_status( $event ) {
+		return ( isset( $event->event_status ) ) ? $event->event_status == $this->query_vars['event_status'] : false;
+	}
+
+
 
 	/**
 	 * Filter the permalink for events to point to our rewrites. // kwight: what about different permalink formats?
